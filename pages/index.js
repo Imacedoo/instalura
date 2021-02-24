@@ -8,7 +8,7 @@ import Box from '../src/components/foundation/layout/Box';
 import Modal from '../src/components/commons/Modal';
 
 export default function Home() {
-  const [isModalOpen, setModalState] = React.useState(true);
+  const [isModalOpen, setModalState] = React.useState(false);
 
   return (
     <Box
@@ -34,7 +34,9 @@ export default function Home() {
             /* eslint-disable-next-line react/jsx-props-no-spreading */
             {...propsDoModal}
           >
-            <div>Oi oi oi</div>
+            <div>
+              Conteudo Modal
+            </div>
           </Box>
         )}
       </Modal>
