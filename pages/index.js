@@ -8,7 +8,7 @@ import Box from '../src/components/foundation/layout/Box';
 import Modal from '../src/components/commons/Modal';
 
 export default function Home() {
-  const [isModalOpen, setModalState] = React.useState(true);
+  const [isModalOpen, setModalState] = React.useState(false);
 
   return (
     <Box
