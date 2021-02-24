@@ -34,7 +34,9 @@ export default function Home() {
             /* eslint-disable-next-line react/jsx-props-no-spreading */
             {...propsDoModal}
           >
-            <div>Oi oi oi</div>
+            <div>
+              Conteudo Modal
+            </div>
           </Box>
         )}
       </Modal>
