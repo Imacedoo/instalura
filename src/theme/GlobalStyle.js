@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
-export const GlobalStyle = createGlobalStyle`
+export default createGlobalStyle`
   * {
     box-sizing: border-box;
   }
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: ${({theme}) => theme.fontFamily};
+    font-family: ${({ theme }) => theme.fontFamily};
   }
 
   /* Full height layout */

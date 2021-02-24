@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build",
     "export": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint \"**/*.js\" --fix"
   },
   "dependencies": {
     "lodash": "^4.17.20",
