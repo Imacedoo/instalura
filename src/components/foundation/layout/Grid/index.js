@@ -34,6 +34,11 @@ export default {
       flex-wrap: wrap;
       margin-right: -16px;
       margin-left: -16px;
+
+    ${propToStyle('flex')};
+    ${propToStyle('marginLeft')};
+    ${propToStyle('marginRight')};
+    ${propToStyle('justifyContent')};
     `,
   Col: styled.div`
       padding-right: 16px;
@@ -94,5 +99,6 @@ export default {
       ${propToStyle('justifyContent')}
       ${propToStyle('flexDirection')}
       ${propToStyle('marginBottom')}
+      ${propToStyle('paddingRight')}
     `,
 };
