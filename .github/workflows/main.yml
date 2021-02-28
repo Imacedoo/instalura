@@ -33,6 +33,4 @@ jobs:
       - name: Install dependencias!
         run: npm install
       - name: Roda o linter!
-      run: npm run lint
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: npm run lint
