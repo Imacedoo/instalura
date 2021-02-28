@@ -30,7 +30,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Node Version
         run: node -v
+      - name: Install dependencias!
+        run: npm install
       - name: Roda o linter!
-        run: npm run lint
+      run: npm run lint
           echo Add other actions to build,
           echo test, and deploy your project.
