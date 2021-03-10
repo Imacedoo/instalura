@@ -12,21 +12,21 @@ export default {
       max-width: initial;
       ${breakpointsMedia({
     sm: css`
-          max-width: 576px; 
+          max-width: 576px;
         `,
     md: css`
           max-width: 768px;
           padding-right: 16px;
-          padding-left: 16px; 
+          padding-left: 16px;
         `,
     lg: css`
-          max-width: 1160px; 
+          max-width: 1160px;
         `,
     xl: css`
           max-width: 1222px;
         `,
   })}
-      
+
       ${propToStyle('marginTop')}
     `,
   Row: styled.div`
@@ -39,6 +39,9 @@ export default {
     ${propToStyle('marginLeft')};
     ${propToStyle('marginRight')};
     ${propToStyle('justifyContent')};
+    ${propToStyle('marginTop')}
+    ${propToStyle('marginBottom')}
+    ${propToStyle('flexDirection')}
     `,
   Col: styled.div`
       padding-right: 16px;
@@ -46,7 +49,7 @@ export default {
       flex-basis: 0; //Força as colunas a ter a mesma largura sempre.
       flex-grow: 1;
       max-width: 100%;
-      
+
       ${({ value }) => {
     if (typeof value === 'number') {
       return css`
@@ -93,12 +96,13 @@ export default {
             ` : '',
     });
   }}
-      
+
       ${propToStyle('display')}
       ${propToStyle('alignItems')}
       ${propToStyle('justifyContent')}
       ${propToStyle('flexDirection')}
       ${propToStyle('marginBottom')}
       ${propToStyle('paddingRight')}
+      ${propToStyle('order')}
     `,
 };
