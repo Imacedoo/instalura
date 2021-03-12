@@ -5,8 +5,6 @@ import Box from '../../foundation/layout/Box';
 import Grid from '../../foundation/layout/Grid';
 
 export default function FAQScreen({ faqCategories }) {
-  const [isModalOpen, setModalState] = React.useState(false);
-
   return (
     <Box
       display="flex"
