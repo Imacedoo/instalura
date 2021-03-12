@@ -11,8 +11,5 @@ export default websitePageHOC(HomeScreen, {
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom right',
     },
-    menuProps: {
-      display: false,
-    },
   },
 });
