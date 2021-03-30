@@ -25,9 +25,12 @@ export default {
     xl: css`
           max-width: 1222px;
         `,
-  })}
+  })};
 
-      ${propToStyle('marginTop')}
+      ${propToStyle('marginTop')};
+      ${propToStyle('display')};
+      ${propToStyle('flex')};
+      ${propToStyle('alignItems')};
     `,
   Row: styled.div`
       display: flex;
@@ -39,9 +42,9 @@ export default {
     ${propToStyle('marginLeft')};
     ${propToStyle('marginRight')};
     ${propToStyle('justifyContent')};
-    ${propToStyle('marginTop')}
-    ${propToStyle('marginBottom')}
-    ${propToStyle('flexDirection')}
+    ${propToStyle('marginTop')};
+    ${propToStyle('marginBottom')};
+    ${propToStyle('flexDirection')};
     `,
   Col: styled.div`
       padding-right: 16px;
