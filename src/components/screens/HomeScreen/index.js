@@ -1,3 +1,4 @@
+import React from 'react';
 import { WebsitePageContext } from '../../wrappers/WebsitePage';
 import Box from '../../foundation/layout/Box';
 import Grid from '../../foundation/layout/Grid';
