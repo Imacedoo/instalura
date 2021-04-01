@@ -1,4 +1,4 @@
-import FAQQuestionScreen from '../../src/components/screens/FAQQuestionScreen';
+import FAQQuestionScreen from '../../src/components/screens/faq/FAQQuestionScreen';
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc';
 
 export default websitePageHOC(FAQQuestionScreen);

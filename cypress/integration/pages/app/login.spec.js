@@ -1,32 +1,27 @@
+import LoginScreenPageObject from '../../../../src/components/screens/app/LoginScreen/LoginScreen.pageObject';
+
 describe('/pages/app/login/', () => {
-  it('Preencha os campos e vá para a página de perfil/profile', () => {
-    cy.intercept('https://instalura-api-git-master-omariosouto.vercel.app/api/login')
-      .as('userLogin');
+  describe('when fill and submit a form login request', () => {
+    it('go to the profile page', () => {
+      cy.intercept('https://instalura-api-git-master-omariosouto.vercel.app/api/login')
+        .as('userLogin');
 
-    cy.visit('/app/login/');
+      const loginScreen = new LoginScreenPageObject(cy);
 
-    // preencher o input usuario
-    cy.get('#formCadastro input[name="usuario"]').type('LuckPou');
+      loginScreen
+        .fillLoginForm({ user: 'LuckPou', password: '123456' })
+        .submitLoginForm();
 
-    // preencher o input senha
-    cy.get('#formCadastro input[name="senha"]').type('123456');
+      cy.url().should('include', '/app/profile');
 
-    // clica no botao de login
-    cy.get('#formCadastro button[type="submit"]').click();
+      cy.wait('@userLogin')
+        .then((intercept) => {
+          const { token } = intercept.response.body.data;
 
-    // o que esperamos? ir para /app/profile
-    cy.url().should('include', '/app/profile');
-
-    // temos o token?
-    cy.wait('@userLogin')
-      .then((intercept) => {
-        // token server
-        const { token } = intercept.response.body.data;
-
-        cy.getCookie('APP_TOKEN')
-          .should('exist')
-          // é igual ao do server
-          .should('have.property', 'value', token);
-      });
+          cy.getCookie('APP_TOKEN')
+            .should('exist')
+            .should('have.property', 'value', token);
+        });
+    });
   });
 });
