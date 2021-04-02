@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> renders component 1`] = `
+.c0 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  __index__: 0;
+}
+
+.c0 color:__wrapped__ {
+  border-radius: 8px;
+  font-family: 'Rubik',sans-serif;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.c0 color:__wrapped__ colors background light {
+  color: #FFFFFF;
+}
+
+.c0 color:__wrapped__ colors background main {
+  color: #F2F2F2;
+}
+
+.c0 color:__wrapped__ colors borders main {
+  color: #F1F1F1;
+}
+
+.c0 color:__wrapped__ colors primary main {
+  color: #D7385E;
+  contrast-text: #fff;
+}
+
+.c0 color:__wrapped__ colors secondary main {
+  color: #FB7B6B;
+  contrast-text: #fff;
+}
+
+.c0 color:__wrapped__ colors tertiary main {
+  color: #070C0E;
+  contrast-text: #fff;
+}
+
+.c0 color:__wrapped__ colors tertiary light {
+  color: #88989E;
+  contrast-text: #fff;
+}
+
+.c0 color:__wrapped__ typographyVariants title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.c0 color:__wrapped__ typographyVariants titleXS {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.c0 color:__wrapped__ typographyVariants subTitle {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.c0 color:__wrapped__ typographyVariants paragraph1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.c0 color:__wrapped__ typographyVariants paragraph2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.c0 color:__wrapped__ typographyVariants smallestException {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.c0 color:__wrapped__ breakpoints {
+  xs: 0;
+  sm: 480px;
+  md: 768px;
+  lg: 992px;
+  xl: 1200px;
+}
+
+.c1 {
+  width: 100%;
+  border: 1px solid #88989E;
+  padding: 12px 16px;
+  outline: 0;
+  border-radius: 8px;
+}
+
+<input
+  class="c0 c1"
+  name="nome"
+  placeholder="Nome"
+  type="text"
+  value="Igor"
+/>
+`;

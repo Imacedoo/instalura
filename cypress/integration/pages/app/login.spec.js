@@ -9,7 +9,7 @@ describe('/pages/app/login/', () => {
       const loginScreen = new LoginScreenPageObject(cy);
 
       loginScreen
-        .fillLoginForm({ user: 'LuckPou', password: '123456' })
+        .fillLoginForm({ user: 'omariosouto', password: 'senhasegura' })
         .submitLoginForm();
 
       cy.url().should('include', '/app/profile');
