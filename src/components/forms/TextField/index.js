@@ -25,8 +25,12 @@ export default function TextField({
   name,
   onChange,
   value,
+  error,
+  isTouched,
   ...props
 }) {
+  const hasError = Boolean(error);
+  const isFieldInvalid = hasError && isTouched;
   return (
     <InputWrapper>
       <Input
@@ -38,6 +42,16 @@ export default function TextField({
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...props}
       />
+
+      {isFieldInvalid && (
+      <Text
+        variant="smallestException"
+        color="error.main"
+        role="alert"
+      >
+        {error}
+      </Text>
+      )}
     </InputWrapper>
   );
 }
@@ -46,5 +60,12 @@ TextField.propTypes = {
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  error: PropTypes.string,
   value: PropTypes.string.isRequired,
+  isTouched: PropTypes.bool,
+};
+
+TextField.defaultProps = {
+  error: '',
+  isTouched: false,
 };
