@@ -4,7 +4,7 @@ import Grid from '../../../foundation/layout/Grid';
 import Box from '../../../foundation/layout/Box';
 import Link from '../../../commons/Link';
 import { Logo } from '../../../../theme/Logo';
-import LoginForm from '../../../patterns/FormLogin';
+import FormLogin from '../../../patterns/FormLogin';
 import Text from '../../../foundation/Text';
 
 export default function LoginScreen() {
@@ -43,7 +43,7 @@ export default function LoginScreen() {
               <Logo size="large" />
             </Link>
           </Box>
-          <LoginForm />
+          <FormLogin />
           <Text
             variant="paragraph1"
             tag="p"
