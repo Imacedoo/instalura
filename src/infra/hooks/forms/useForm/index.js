@@ -10,25 +10,28 @@ export function useForm({
   const [errors, setErrors] = React.useState({});
   const [touchedFields, setTouchedFields] = React.useState({});
 
-  React.useEffect(() => {
-    validateSchema(values)
-      .then(() => {
-        setIsFormDisabled(false);
-        setErrors({});
-      })
-      .catch((err) => {
-        const formatedErrors = err.inner.reduce((errorObjectAcc, currentError) => {
-          const fieldName = currentError.path;
-          const errorMessage = currentError.message;
-          return {
-            ...errorObjectAcc,
-            [fieldName]: errorMessage,
-          };
-        }, {});
+  async function validateValues(currentValues) {
+    try {
+      await validateSchema(currentValues);
+      setErrors({});
+      setIsFormDisabled(false);
+    } catch (err) {
+      const formatedErrors = err.inner.reduce((errorObjectAcc, currentError) => {
+        const fieldName = currentError.path;
+        const errorMessage = currentError.message;
+        return {
+          ...errorObjectAcc,
+          [fieldName]: errorMessage,
+        };
+      }, {});
 
-        setErrors(formatedErrors);
-        setIsFormDisabled(true);
-      });
+      setErrors(formatedErrors);
+      setIsFormDisabled(true);
+    }
+  }
+
+  React.useEffect(() => {
+    validateValues(values);
   }, [values]);
 
   return {
@@ -55,6 +58,7 @@ export function useForm({
       });
     },
     isFormDisabled,
+    setIsFormDisabled,
     errors,
     touchedFields,
   };

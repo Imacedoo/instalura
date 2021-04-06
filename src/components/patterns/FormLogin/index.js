@@ -16,7 +16,8 @@ const loginSchema = yup.object().shape({
     .required('Senha é obrigatória'),
 });
 
-export default function LoginForm() {
+// eslint-disable-next-line react/prop-types
+export default function FormLogin({ onSubmit }) {
   const router = useRouter();
   const initialValues = {
     usuario: '',
@@ -25,12 +26,18 @@ export default function LoginForm() {
   const form = useForm({
     initialValues,
     onSubmit: (values) => {
+      form.setIsFormDisabled(true);
       loginService.login({
         username: values.usuario,
         password: values.senha,
       })
         .then(() => {
           router.push('/app/profile');
+        })
+        .catch((error) => {
+          // mostrar erro na tela
+          console.log(error);
+          form.setIsFormDisabled(false);
         });
     },
     async validateSchema(values) {
@@ -41,7 +48,7 @@ export default function LoginForm() {
   });
 
   return (
-    <form id="formCadastro" onSubmit={form.handleSubmit}>
+    <form id="formCadastro" onSubmit={onSubmit || form.handleSubmit}>
       <TextField
         placeholder="Usuário"
         name="usuario"
