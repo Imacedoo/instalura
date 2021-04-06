@@ -1,5 +1,16 @@
 import React from 'react';
 
+function formatErrors(yupErrors) {
+  return yupErrors.reduce((errorObjectAcc, currentError) => {
+    const fieldName = currentError.path;
+    const errorMessage = currentError.message;
+    return {
+      ...errorObjectAcc,
+      [fieldName]: errorMessage,
+    };
+  }, {});
+}
+
 export function useForm({
   initialValues,
   onSubmit,
@@ -16,14 +27,7 @@ export function useForm({
       setErrors({});
       setIsFormDisabled(false);
     } catch (err) {
-      const formatedErrors = err.inner.reduce((errorObjectAcc, currentError) => {
-        const fieldName = currentError.path;
-        const errorMessage = currentError.message;
-        return {
-          ...errorObjectAcc,
-          [fieldName]: errorMessage,
-        };
-      }, {});
+      const formatedErrors = formatErrors(err.inner);
 
       setErrors(formatedErrors);
       setIsFormDisabled(true);
@@ -31,7 +35,8 @@ export function useForm({
   }
 
   React.useEffect(() => {
-    validateValues(values);
+    validateValues(values)
+      .catch((err) => err);
   }, [values]);
 
   return {
