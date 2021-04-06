@@ -88,7 +88,7 @@ jobs:
 
       # Commands that will run:
       - name: Install Packages
-        run: yarn --prefer-offline
+        run: npm install --prefer-offline
 
       - name: Run Integration Tests
-        run: yarn test:integration:build
+        run: npm run test:integration:build
