@@ -10,8 +10,10 @@
     "commit": "cz",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:integration": "cypress run --headless",
     "test:integration:open": "cypress open",
-    "test:integration": "cypress run --headless"
+    "test:integration:build": "start-server-and-test build/start http://localhost:3000 test:integration",
+    "build/start": "npm run build && npm start"
   },
   "dependencies": {
     "@crello/react-lottie": "0.0.11",
@@ -51,7 +53,8 @@
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.8",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.4",
+    "start-server-and-test": "^1.12.1"
   },
   "husky": {
     "hooks": {
