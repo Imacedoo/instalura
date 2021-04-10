@@ -67,6 +67,8 @@ jobs:
   integration_tests:
     name: Integration Tests
     runs-on: ubuntu-latest # The type of runner that the job will run on
+    env:
+      DATO_CMS_TOKEN: 30c66d4b1f7f4dcfdc6fdb1a4df08d
     steps: # Steps represent a sequence of tasks that will be executed as part of the job
       # [Pre Build-step]
       - uses: actions/checkout@v2 ## Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -89,8 +91,6 @@ jobs:
       # Commands that will run:
       - name: Install Packages
         run: npm install --prefer-offline
-        env:
-            DATO_CMS_TOKEN: 30c66d4b1f7f4dcfdc6fdb1a4df08d
 
       - name: Run Integration Tests
         run: npm run test:integration:build
