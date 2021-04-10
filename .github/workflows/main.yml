@@ -89,6 +89,8 @@ jobs:
       # Commands that will run:
       - name: Install Packages
         run: npm install --prefer-offline
+        env:
+            DATO_CMS_TOKEN: 30c66d4b1f7f4dcfdc6fdb1a4df08d
 
       - name: Run Integration Tests
         run: npm run test:integration:build
