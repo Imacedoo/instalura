@@ -12,6 +12,7 @@ export function CMSGraphQLClient() {
   });
 
   return {
+    // eslint-disable-next-line no-unused-vars
     async query({ query, variables }) {
       const messages = await client.request(query);
 
