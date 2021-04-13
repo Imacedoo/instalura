@@ -1,5 +1,5 @@
 import React from 'react';
-import { WebsitePageContext } from '../../../wrappers/WebsitePage';
+import { WebsitePageContext } from '../../../wrappers/WebsitePage/context';
 import Grid from '../../../foundation/layout/Grid';
 import Box from '../../../foundation/layout/Box';
 import Link from '../../../commons/Link';

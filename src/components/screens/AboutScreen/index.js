@@ -27,9 +27,8 @@ export default function Index({ messages }) {
               variant="title"
               tag="h2"
               color="tertiary.main"
-            >
-              {messages.pagesobre.pageTitle}
-            </Text>
+              cmsKey="pagesobre.pageTitle"
+            />
 
             <Box
               dangerouslySetInnerHTML={{
