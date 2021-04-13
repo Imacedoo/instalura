@@ -1,8 +1,8 @@
 import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc';
 import AboutScreen, { getContent } from '../src/components/screens/AboutScreen';
 
-export async function getStaticProps() {
-  const messages = await getContent();
+export async function getStaticProps({ preview }) {
+  const messages = await getContent({ preview });
 
   return {
     props: {
