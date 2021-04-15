@@ -58,7 +58,7 @@ describe('loginService', () => {
     describe('when user try to logout and succed', () => {
       test('remove its token', async () => {
         const destroyCookie = jest.fn();
-        await loginService.logout(destroyCookie);
+        await loginService.logout(null, destroyCookie);
 
         expect(destroyCookie).toHaveBeenCalledWith(null, 'APP_TOKEN');
       });
