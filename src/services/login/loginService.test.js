@@ -60,7 +60,7 @@ describe('loginService', () => {
         const destroyCookie = jest.fn();
         await loginService.logout(null, destroyCookie);
 
-        expect(destroyCookie).toHaveBeenCalledWith(null, 'APP_TOKEN');
+        expect(destroyCookie).toHaveBeenCalledWith(null, 'LOGIN_COOKIE_APP_TOKEN');
       });
     });
   });
